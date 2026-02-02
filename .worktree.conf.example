@@ -1,0 +1,27 @@
+# .worktree.conf - Worktree creation configuration
+#
+# Place this file in the repository root as ".worktree.conf" to customize
+# how worktrees are created by create_worktree.sh.
+#
+# If this file is not present, only .env and .envrc will be copied.
+
+# Environment files to copy into the worktree (one path per entry, relative to repo root)
+ENV_FILES=(
+  ".env"
+  ".envrc"
+  # Add your project-specific env files below:
+  # "src/.env.local"
+  # "services/api/.env"
+)
+
+# Port variable names to randomize in .env (prevents port conflicts between worktrees)
+PORT_VARS=(
+  # "PORT"
+  # "API_PORT"
+  # "DEV_SERVER_PORT"
+)
+
+# Setup command to run after creating the worktree (empty string to skip)
+SETUP_COMMAND=""
+# SETUP_COMMAND="make setup"
+# SETUP_COMMAND="npm install"
